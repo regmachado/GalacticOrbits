@@ -25,7 +25,7 @@ for k in range(0, Nsamples):
     L     = 10.0
     lw    = 0.5
     alpha = 0.7
-    color = 'tab:orange'
+    color = 'tab:blue'
 
     #Face-on frame
     ax1 = plt.subplot(121)
