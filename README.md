@@ -25,11 +25,13 @@ The purpose of this code is to compute and visualize orbits of particles in the 
 
 ```
    python plots.py
+   python plots3D.py
 ```
 4 . Make videos:
 
 ```
    python videos.py
+   python videos3D.py
 ```
 
 # Comments
@@ -38,6 +40,16 @@ The purpose of this code is to compute and visualize orbits of particles in the 
 
 2. The time integration is done using the leapfrog method with fixed time step. A small time step will increase the accurary of the calculation and improve energy conservation, at the cost of longer run time. In the default example, the integration is performed for 10 Gyr at steps of 0.001 Gyr, thus creating an output file with 10000 lines. It is possible not to save every single time step. For example, if the parameter `SaveEvery=10` were used, only 1000 lines would be written. The output frequency does not affect the run time or the accuracy.
 
-3. The plots show face-on and edge-on projections. All points in the written output are used, without downsampling. In the default example, the sizes of the square frames are 20 by 20 kpc. These png plots are not the ones used to create the videos. Step 3 can be skipped.
+3. The 2D plots show face-on and edge-on projections. All points in the written output are used, without downsampling. In the default example, the sizes of the square frames are 20 by 20 kpc (also 20 kpc in z in the case of the 3D plots). These png plots are not the ones used to create the videos. Step 3 can be skipped.
 
-4. For the videos, a dark background is used and the axis labels are switched off. The default ranges are 20 by 20 kpc for the face-on frame, and 20 by 8 kpc for the edge-on frame. Time labels are not shown. Creating the videos may take a few minutes. To speed up the video creation, the number of frames can be downsampled with the `step=5` parameter, for example. A large value of `step` will decrease the smoothness of the orbits. The duration of the video can be controlled with the `fps` parameter in the `ani.save()` function. For example, 10000 times doswnsampled by `step=5` means 2000 frames will be animated. At 24 frames per second, the video will last approximately 83 seconds.
+4. For the 2D videos, a dark background is used and the axis labels are switched off. The default ranges are 20 by 20 kpc for the face-on frame, and 20 by 8 kpc for the edge-on frame. Time labels are not shown. Creating the videos may take a few minutes. To speed up the video creation, the number of frames can be downsampled with the `step=5` parameter, for example. A large value of `step` will decrease the smoothness of the orbits. The duration of the video can be controlled with the `fps` parameter in the `ani.save()` function. For example, 10000 times doswnsampled by `step=5` means 2000 frames will be animated. At 24 frames per second, the video will last approximately 83 seconds. For the 3D videos temporary png files will be created; use `step` and `framerate` to control the duration.
+
+# Examples
+
+![](examples/plot.png)
+
+![](examples/plot3.png)
+
+![](examples/video.png)
+
+
