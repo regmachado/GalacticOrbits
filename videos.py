@@ -88,6 +88,6 @@ for k in range(0, Nsamples):
     if not os.path.exists('videos'):
         os.makedirs('videos')
         
-    print( 'Creating videos/orbit_%s.mp4 ... ' % k4 )
+    print( 'Creating videos/video_%s.mp4 ... ' % k4 )
 
-    ani.save('videos/orbit_%s.mp4' % k4, writer='ffmpeg', fps=24, dpi=250)
+    ani.save('videos/video_%s.mp4' % k4, writer='ffmpeg', fps=24, dpi=250)
